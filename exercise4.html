@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Embeds</title>
+    <style>
+
+
+button {
+        background-color: turquoise; 
+        color: white; 
+        border: none; 
+        padding: 10px 20px; 
+        border-radius: 25px; 
+        cursor: pointer; 
+        font-size: 16px; 
+    } 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        .content {
+            text-align: center;
+            margin-top: 20px;
+        }
+        iframe {
+            width: 50%;
+            height: 300px;
+            border: none;
+        }
+        audio {
+            margin-top: 20px;
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            font-size: 18px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Media Embeds Example</h1>
+    <div class="content">
+
+       
+        <h2>YouTube Video</h2>
+        <iframe  src="https://www.youtube.com/embed/vkszrFyeTMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+        <br>
+
+        <audio controls>
+            <source src="file/jax-02.14-nel-02.14-do-stupora-new-album-128-kbps.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        
+        
+        
+        
+        <h2>Download PDF</h2>
+        <a href="file/<!DOCTYPE html>.html" download>Click here to download the PDF file</a>
+
+    </div>
+  
+</body>
+</html>

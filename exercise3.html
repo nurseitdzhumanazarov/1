@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <title>validation  form </title>
+
+        <style>
+
+
+button {
+        background-color: turquoise; 
+        color: white; 
+        border: none; 
+        padding: 10px 20px; 
+        border-radius: 25px; 
+        cursor: pointer; 
+        font-size: 16px; 
+    } 
+  body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: inline-block;
+            
+        }
+        select {
+            width: 50%;
+            padding: 9px;
+            font-size: 15px;
+            border: 1px solid #ebe413;
+            border-radius: 4px;
+        }
+        input {
+            width: 50%;
+            padding: 9px;
+            font-size: 15px;
+            border: 1px solid #ffbb00;
+            border-radius: 4px;
+
+        }
+        title {
+            color: blue;
+            align-items: center;
+
+        }
+        button{
+
+            width: 100%;
+            padding: 9px;
+            font-size: 15px;
+            border: 1px solid #f1f0e8;
+            border-radius: 4px;
+            color: #e9ebe9;
+            background-color: #36e213;
+            
+            
+
+
+        }
+
+    </style> 
+    </head>
+    <body>
+        <br> <br><br>
+<header> 
+
+    <center> Event Registration  Form</center>
+
+    <style>
+
+
+    </style>
+
+</header>
+<br><br><br> 
+<form>
+
+    <label for="full name"> <b>Name:  </b> </label> <br> <br>
+<b>
+<input type ="text"   id="name"    name="name"    placeholder="Nurseit Dzhumanazarov"   class="form-control"  required> 
+ 
+
+
+
+<br> <br><br>
+
+<label for="email"> Email Address:</label> <br><br>
+<input  type="text" id="email" name="email" placeholder="nurseit@gmail.com" class="form-control" required>
+<br> <br> <br>
+
+<label for="password">  Password:</label> <br>  <br>
+
+<input type="password" name="password" id="password" placeholder="Enter your password" required>
+<span class="toggle-password" onclick="togglePassword()"> 🙈 </span>
+
+<br> <br><br>
+<label for="Event"> Event Date:</label> <br><br>
+<input type="date" name="date" id="date" required lang="en" required>
+<br>
+<br>
+<br>
+
+<form id="registrationForm">
+<label for="eventType">  Event type: </label> 
+
+<br><br> 
+<select name="eventType" id="eventType" required>
+    <option value="Workshop"> Workshop</option>
+    <option value="Seminar"> Seminar</option>
+    <option value="Conference"> Conference</option>
+    <option value="Webinar">  Webinar </option>
+    <option value="Meeting"> Meeting</option>
+    <option value="Other"> Other</option>
+    </select> <br><br>
+
+    <button type="submit"> Register </button> 
+</form>
+
+
+
+
+
+     </body>
+    </html>

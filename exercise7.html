@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload Progress Bar</title>
+    <style>
+
+
+button {
+        background-color: turquoise; 
+        color: white; 
+        border: none; 
+        padding: 10px 20px; 
+        border-radius: 25px; 
+        cursor: pointer; 
+        font-size: 16px; 
+    }
+
+
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-bar-inner {
+            height: 20px;
+            width: 0;
+            background-color: #4caf50;
+            transition: width 0.3s ease;
+        }
+
+        .label {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        #doneButton {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #doneButton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>File Upload</h1>
+        <input type="file" id="fileInput">
+        <div class="progress-bar">
+            <div class="progress-bar-inner" id="progressBar"></div>
+        </div>
+        <div class="label" id="progressLabel">0% Completed</div>
+        <button id="doneButton">Done</button>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const progressBar = document.getElementById('progressBar');
+        const progressLabel = document.getElementById('progressLabel');
+        const doneButton = document.getElementById('doneButton');
+
+        fileInput.addEventListener('change', () => {
+            const file = fileInput.files[0];
+
+            if (file) {
+                const totalSize = file.size;
+                let uploadedSize = 0;
+
+                // Simulate upload progress
+                const interval = setInterval(() => {
+                    if (uploadedSize < totalSize) {
+                        uploadedSize += totalSize * 0.1; // Simulate 10% per interval
+                        const progress = Math.min(100, (uploadedSize / totalSize) * 100);
+
+                        progressBar.style.width = progress + '%';
+                        progressLabel.textContent = Math.round(progress) + '% Completed';
+
+                        // Show the "Done" button when progress reaches 100%
+                        if (progress === 100) {
+                            clearInterval(interval); // Stop the interval when the progress reaches 100%
+                            doneButton.style.display = 'block'; // Show the Done button
+                        }
+                    }
+                }, 500); // Update every 500ms
+            }
+        });
+
+        // Reset progress bar and hide "Done" button when clicked
+        doneButton.addEventListener('click', () => {
+            progressBar.style.width = '0%'; // Reset the progress bar width
+            progressLabel.textContent = '0% Completed'; // Reset the progress label
+            doneButton.style.display = 'none'; // Hide the Done button
+            fileInput.value = ''; // Clear the file input
+        });
+    </script>
+
+
+
+</body>
+</html>
